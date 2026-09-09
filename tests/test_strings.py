@@ -34,6 +34,9 @@ def test_remove_extra_spaces(text, expected):
         ("helloWorld", "hello_world"),
         ("  Multiple   Spaces  ", "multiple_spaces"),
         ("Python 3 Basics", "python_3_basics"),
+        ("", ""),
+        ("HELLO WORLD", "hello_world"),
+        ("XMLParser", "xmlparser"),
     ],
 )
 def test_to_snake_case(text, expected):
@@ -49,6 +52,8 @@ def test_to_snake_case(text, expected):
         ("helloWorld", "hello-world"),
         ("  Multiple   Spaces  ", "multiple-spaces"),
         ("Python 3 Basics", "python-3-basics"),
+        ("", ""),
+        ("HELLO WORLD", "hello-world"),
     ],
 )
 def test_to_kebab_case(text, expected):
@@ -64,6 +69,9 @@ def test_to_kebab_case(text, expected):
         ("A man, a plan, a canal: Panama!", True),
         ("hello", False),
         ("", True),
+        ("a", True),
+        ("12321", True),
+        ("1a2a1", True),
     ],
 )
 def test_is_palindrome(text, expected):
@@ -81,6 +89,8 @@ def test_is_palindrome(text, expected):
         ("hello!", False),
         ("user@email.com", False),
         ("", False),
+        ("   ", False),
+        ("hello\n", False),
     ],
 )
 def test_is_alphanumeric(text, expected):
@@ -97,6 +107,7 @@ def test_is_alphanumeric(text, expected):
         ("   ", 0),
         ("hello-world_again", 3),
         ("camelCaseText", 3),
+        ("hello 123 world", 3),
     ],
 )
 def test_count_words(text, expected):
