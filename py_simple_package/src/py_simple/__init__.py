@@ -53,7 +53,7 @@ from .easy_flow import (
 )
 from .easy_regex import (
     extract_urls, extract_numbers, extract_number_sequences,
-    extract_emails,
+    extract_emails, extract_hex_colors,
 )
 from .easy_async import (
     run_at_the_same_time_no_params, run_at_the_same_time_with_params,
@@ -81,7 +81,7 @@ from .easy_stats import (
     median, mode, data_range, variance, standard_deviation, percentile, z_score, interquartile_range
 )
 from .easy_images import (
-    resize_image, convert_image, rotate_image, get_image_info,
+    resize_image, create_thumbnail, convert_image, rotate_image, get_image_info,
 )
 from .easy_game import (
     basic_game_setup, check_if_quit, get_mouse_position,
@@ -90,17 +90,18 @@ from .easy_game import (
 )
 from .easy_generator import (
     generate_qr_code, generate_password, generate_otp, generate_api_key,
-    generate_uuid,
+    generate_uuid, generate_slug,
 )
 from .easy_math import (
     get_least_common_multiple, factorial, fibonacci, prime_factorization,
-    sum_of_digits, divisors,
+    sum_of_digits, divisors, is_perfect_square,
 )
 from .easy_data_visualization import (
     plot_data,
 )
 from .easy_random import (
-    roll_dice, flip_coin, pick_random_item, shuffle_list, random_int,
+    roll_dice, flip_coin, pick_random_item, pick_random_items,
+    shuffle_list, random_int,
 )
 from .easy_sql import (
     EasySqlError,
@@ -118,4 +119,10 @@ from .easy_archive import (
 )
 from .easy_config import (
     gh_workflow_config,
+)
+from .easy_ai import (
+    ask_ai, summarize_text, translate_text, get_model,
+)
+from .easy_logging import (
+    log_step, log_function
 )

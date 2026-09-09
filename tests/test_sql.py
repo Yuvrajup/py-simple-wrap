@@ -1,15 +1,16 @@
 import sqlite3
-from py_simple.easy_sql import (
-open_db, 
-EasySqlError, 
-run_update,
-ExperimentalWarning, 
-run_select,
-conditional_run_select,
-run_insert,
-run_delete, 
-delete_all_from_table,
-_check_if_valid,
+
+import pytest
+
+from py_simple_package.src.py_simple.easy_sql import (
+    EasySqlError,
+    conditional_run_select,
+    delete_all_from_table,
+    open_db,
+    run_delete,
+    run_insert,
+    run_select,
+    run_update,
 )
 
 def test_open_db_success():
