@@ -185,3 +185,63 @@ def test_translate_text_error():
         translate_text(mock_model, "Bonjour")
 
     assert "Model timeout" in str(exc_info.value)
+
+
+def test_get_model_openai():
+    from py_simple_package.src.py_simple.easy_ai import get_model
+    from unittest.mock import patch, MagicMock
+    with patch("langchain_openai.ChatOpenAI") as mock_cls:
+        mock_cls.return_value = MagicMock()
+        get_model("openai", "gpt-4")
+    mock_cls.assert_called_once()
+
+def test_get_model_google():
+    from py_simple_package.src.py_simple.easy_ai import get_model
+    from unittest.mock import patch, MagicMock
+    with patch("langchain_google_genai.ChatGoogleGenerativeAI") as mock_cls:
+        mock_cls.return_value = MagicMock()
+        get_model("google", "gemini-pro")
+    mock_cls.assert_called_once()
+
+def test_get_model_mistral():
+    from py_simple_package.src.py_simple.easy_ai import get_model
+    from unittest.mock import patch, MagicMock
+    with patch("langchain_mistralai.ChatMistralAI") as mock_cls:
+        mock_cls.return_value = MagicMock()
+        get_model("mistral", "mistral-large")
+    mock_cls.assert_called_once()
+
+def test_ai_chat_exception_caught(capsys):
+    from py_simple_package.src.py_simple.easy_ai import ai_chat
+    from unittest.mock import patch, MagicMock
+    mock_model = MagicMock()
+    mock_model.invoke.side_effect = Exception("test exception")
+    with patch("builtins.input", side_effect=["hello", "exit"]):
+        ai_chat(mock_model)
+    captured = capsys.readouterr()
+    assert "test exception" in captured.out
+
+from py_simple_package.src.py_simple.easy_ai import EasyAgent, EasyAIError
+import pytest
+import tempfile
+import os
+
+def test_easy_agent_init_success():
+    with tempfile.NamedTemporaryFile(suffix=".txt", delete=False) as f:
+        f.write(b"test prompt")
+        f_path = f.name
+    try:
+        agent = EasyAgent(f_path)
+        assert agent.master_prompt == "test prompt"
+    finally:
+        os.remove(f_path)
+
+def test_easy_agent_init_unsupported_ext():
+    with pytest.raises(EasyAIError) as exc_info:
+        EasyAgent("prompt.md")
+    assert "not supported" in str(exc_info.value)
+
+def test_easy_agent_init_not_found():
+    with pytest.raises(EasyAIError) as exc_info:
+        EasyAgent("nonexistent_prompt.txt")
+    assert "No such file or directory" in str(exc_info.value)

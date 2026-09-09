@@ -387,3 +387,32 @@ def test_compare_json_invalid_input_raises():
 
     with pytest.raises(EasyJsonError):
         compare_json(data1={"key": "value"}, data2="not a dict")
+
+
+def test_get_json_keys_both_args_raises_easy_json_error():
+    from py_simple_package.src.py_simple.easy_json import get_json_keys, EasyJsonError
+    import pytest
+    with pytest.raises(EasyJsonError):
+        get_json_keys(data={"a": 1}, filepath="dummy.json")
+
+def test_compare_json_missing_data1_raises():
+    from py_simple_package.src.py_simple.easy_json import compare_json, EasyJsonError
+    import pytest
+    with pytest.raises(EasyJsonError):
+        compare_json(data2={"a": 1})
+
+def test_compare_json_missing_data2_raises():
+    from py_simple_package.src.py_simple.easy_json import compare_json, EasyJsonError
+    import pytest
+    with pytest.raises(EasyJsonError):
+        compare_json(data1={"a": 1})
+
+def test_compare_json_different_types():
+    from py_simple_package.src.py_simple.easy_json import compare_json
+    result = compare_json(data1={"a": 1}, data2={"a": "1"})
+    assert result["changed"]["a"] == (1, "1")
+
+def test_compare_json_left_list_longer():
+    from py_simple_package.src.py_simple.easy_json import compare_json
+    result = compare_json(data1=[1, 2], data2=[1])
+    assert result["removed"]["[1]"] == 2
