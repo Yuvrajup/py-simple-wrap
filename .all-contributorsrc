@@ -551,6 +551,18 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "SpaceShaman",
+      "name": "SpaceShaman",
+      "avatar_url": "https://github.com/SpaceShaman.png",
+      "profile": "https://github.com/SpaceShaman",
+      "contributions": [
+        "test",
+        "documentation",
+        "code",
+        "module-author"
+      ]
     }
   ]
 }

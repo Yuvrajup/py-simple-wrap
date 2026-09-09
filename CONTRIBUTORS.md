@@ -75,6 +75,12 @@ Every tile below is a real person who showed up for this project. 💛
         <sub><b>Vijay Misal</b></sub>
       </a>
     </td>
+    <td align="center" valign="top" width="8.6%">
+      <a href="https://github.com/SpaceShaman">
+        <img src="https://github.com/SpaceShaman.png" width="100px;" alt="SpaceShaman"/><br />
+        <sub><b>SpaceShaman</b></sub>
+      </a>
+    </td>
   </tr>
 </table>
 
@@ -221,6 +227,12 @@ Every tile below is a real person who showed up for this project. 💛
       <a href="https://github.com/ohnsh">
         <img src="https://github.com/ohnsh.png" width="100px;" alt="ohnsh"/><br />
         <sub><b>John Sherrell</b></sub>
+      </a>
+    </td>
+    <td align="center" valign="top" width="8.6%">
+      <a href="https://github.com/SpaceShaman">
+        <img src="https://github.com/SpaceShaman.png" width="100px;" alt="SpaceShaman"/><br />
+        <sub><b>SpaceShaman</b></sub>
       </a>
     </td>
   </tr>
@@ -447,6 +459,12 @@ Every tile below is a real person who showed up for this project. 💛
         <sub><b>Yuvrajup</b></sub>
       </a>
     </td>
+    <td align="center" valign="top" width="8.6%">
+      <a href="https://github.com/SpaceShaman">
+        <img src="https://github.com/SpaceShaman.png" width="100px;" alt="SpaceShaman"/><br />
+        <sub><b>SpaceShaman</b></sub>
+      </a>
+    </td>
   </tr>
 </table>
 
@@ -561,6 +579,12 @@ Every tile below is a real person who showed up for this project. 💛
       <a href="https://github.com/Venkat4real">
         <img src="https://github.com/Venkat4real.png" width="100px;" alt="Venkat"/><br />
         <sub><b>Venkat</b></sub>
+      </a>
+    </td>
+    <td align="center" valign="top" width="8.6%">
+      <a href="https://github.com/SpaceShaman">
+        <img src="https://github.com/SpaceShaman.png" width="100px;" alt="SpaceShaman"/><br />
+        <sub><b>SpaceShaman</b></sub>
       </a>
     </td>
   </tr>
@@ -742,6 +766,7 @@ The Module Magicians. The Code Conjurers. The Test Sentinels. The Lore Keepers. 
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Yuvrajup"><img src="https://github.com/Yuvrajup.png?s=80" width="80px;" alt="Yuvrajup"/><br /><sub><b>Yuvrajup</b></sub></a><br /><a href="https://github.com/sara-czasak/py_simple/commits?author=Yuvrajup" title="Tests">🧪</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SpaceShaman"><img src="https://github.com/SpaceShaman.png?s=80" width="80px;" alt="SpaceShaman"/><br /><sub><b>SpaceShaman</b></sub></a><br /><a href="https://github.com/sara-czasak/py_simple/commits?author=SpaceShaman" title="Tests">🧪</a> <a href="https://github.com/sara-czasak/py_simple/commits?author=SpaceShaman" title="Docs">📖</a> <a href="https://github.com/sara-czasak/py_simple/commits?author=SpaceShaman" title="Code">💻</a> <a href="https://github.com/SpaceShaman" title="module-author">🪶</a></td>
     </tr>
   </tbody>
 </table>
