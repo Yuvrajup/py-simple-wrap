@@ -96,9 +96,16 @@ from .easy_math import (
     get_least_common_multiple, factorial, fibonacci, prime_factorization,
     sum_of_digits, divisors, is_perfect_square,
 )
-from .easy_data_visualization import (
-    plot_data,
-)
+try:
+    from .easy_data_visualization import (
+        plot_data,
+    )
+except ImportError:
+    def plot_data(*args, **kwargs):
+        raise ImportError(
+            "plot_data requires matplotlib. Install it with: "
+            "pip install py-simple-wrap[visualization]"
+        )
 from .easy_random import (
     roll_dice, flip_coin, pick_random_item, pick_random_items,
     shuffle_list, random_int,
