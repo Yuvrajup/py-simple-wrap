@@ -40,31 +40,42 @@ If you've never contributed to an open-source project before, here is exactly ho
 
 4. **Create a Branch**: It's best to do your work on a new branch:
 
-   ```
+   ```bash
    git checkout -b my-new-feature
    ```
 
-5. **Write Your Code**: Add your awesome new function or fix that bug! If you're
+5. **Set up the Environment**: We use `uv` for lightning-fast dependency management.
+   - Install `uv` if you haven't already: [Installation Guide](https://docs.astral.sh/uv/getting-started/installation/)
+   - Sync the project dependencies:
+     ```bash
+     uv sync --all-extras --dev
+     ```
+   - Run the tests to make sure everything works:
+     ```bash
+     uv run pytest
+     ```
+
+6. **Write Your Code**: Add your awesome new function or fix that bug! If you're
 not sure how to format a docstring or write a tutorial page, check the
 [Contributor Hub](https://sara-czasak.github.io/py-simple-wrap/docs/contributor-hub/docstring_template/)
 on the docs site — it has copy-paste templates for both, built from this
 project's actual conventions.
 
 
-6. **Commit Your Changes**: Save your progress with a helpful message:
+7. **Commit Your Changes**: Save your progress with a helpful message:
 
-   ```
+   ```bash
    git add .
    git commit -m "Added a new helper for list cleaning"
    ```
 
-7. **Push to GitHub**: Send your changes back to your fork:
+8. **Push to GitHub**: Send your changes back to your fork:
 
-   ```
+   ```bash
    git push origin my-new-feature
    ```
 
-8. **Open a Pull Request**: Go to the original `py-simple-wrap` repository on GitHub, and you'll see a button that says "Compare & pull request." Click it and tell me a bit about what you did!
+9. **Open a Pull Request**: Go to the original `py-simple-wrap` repository on GitHub, and you'll see a button that says "Compare & pull request." Click it and tell me a bit about what you did!
 
 ## 💡 What should I contribute?
 

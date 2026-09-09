@@ -1,13 +1,15 @@
-import pytest
 from unittest.mock import MagicMock, patch
+
+import pytest
+
 from py_simple_package.src.py_simple.easy_ai import (
-    summarize_text, 
-    translate_text,
-    get_model,
-    ask_ai,
-    ai_chat,
-    _is_exit_command,
     EasyAIError,
+    _is_exit_command,
+    ai_chat,
+    ask_ai,
+    get_model,
+    summarize_text,
+    translate_text,
 )
 
 
@@ -144,6 +146,7 @@ def test_ai_chat_sends_message_then_exits(capsys):
     captured = capsys.readouterr()
     assert "AI: Hi!" in captured.out
     mock_model.invoke.assert_called_once()
+
 
 def test_translate_text_success():
     """Test that translate_text correctly returns model response content."""
