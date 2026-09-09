@@ -1,16 +1,19 @@
 import sqlite3
+
+import pytest
+
 from py_simple.easy_sql import (
-open_db, 
-EasySqlError, 
-run_update,
-ExperimentalWarning, 
-run_select,
-conditional_run_select,
-run_insert,
-run_delete, 
-delete_all_from_table,
-_check_if_valid,
+    EasySqlError,
+    _check_if_valid,
+    conditional_run_select,
+    delete_all_from_table,
+    open_db,
+    run_delete,
+    run_insert,
+    run_select,
+    run_update,
 )
+
 
 def test_open_db_success():
     """Test if the database opens successfully."""
@@ -523,7 +526,6 @@ class TestCheckIfValid:
     """Tests for the internal _check_if_valid helper function."""
 
     def test_valid_table_name(self):
-        from py_simple.easy_sql import _check_if_valid
 
         assert _check_if_valid("users") is True
         assert _check_if_valid("Users") is True
@@ -534,7 +536,6 @@ class TestCheckIfValid:
         assert _check_if_valid("users_") is True
 
     def test_valid_column_names(self):
-        from py_simple.easy_sql import _check_if_valid
 
         assert _check_if_valid("name") is True
         assert _check_if_valid("name, email") is True
@@ -543,7 +544,6 @@ class TestCheckIfValid:
         assert _check_if_valid("*") is True
 
     def test_invalid_sql_keywords(self):
-        from py_simple.easy_sql import _check_if_valid
 
         assert _check_if_valid("SELECT") is False
         assert _check_if_valid("select") is False
@@ -559,7 +559,6 @@ class TestCheckIfValid:
         assert _check_if_valid("TRUNCATE") is False
 
     def test_invalid_special_characters(self):
-        from py_simple.easy_sql import _check_if_valid
 
         assert _check_if_valid("user; DROP TABLE users") is False
         assert _check_if_valid("users--") is False
@@ -571,14 +570,12 @@ class TestCheckIfValid:
         assert _check_if_valid("user.name") is False
 
     def test_invalid_union_variants(self):
-        from py_simple.easy_sql import _check_if_valid
 
         assert _check_if_valid("users UNION SELECT * FROM sqlite_master") is False
         assert _check_if_valid("users union all select * from sqlite_master") is False
         assert _check_if_valid("users; union select * from sqlite_master") is False
 
     def test_non_string_input(self):
-        from py_simple.easy_sql import _check_if_valid
 
         assert _check_if_valid(123) is False
         assert _check_if_valid(None) is False
